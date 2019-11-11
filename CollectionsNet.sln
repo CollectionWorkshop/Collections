@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionsNet_Intro", "CollectionsNet\CollectionsNet_Intro.csproj", "{C093153B-E995-42AF-8963-BEBB25E463C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollectionsNet_Linq", "CollectionsNet_Linq\CollectionsNet_Linq.csproj", "{81647732-D4BA-4860-A2F9-B7BB9D09A718}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C093153B-E995-42AF-8963-BEBB25E463C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C093153B-E995-42AF-8963-BEBB25E463C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C093153B-E995-42AF-8963-BEBB25E463C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C093153B-E995-42AF-8963-BEBB25E463C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81647732-D4BA-4860-A2F9-B7BB9D09A718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81647732-D4BA-4860-A2F9-B7BB9D09A718}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81647732-D4BA-4860-A2F9-B7BB9D09A718}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81647732-D4BA-4860-A2F9-B7BB9D09A718}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEB432BC-03E7-4133-AB4D-4D16AA0CB531}
+	EndGlobalSection
+EndGlobal
