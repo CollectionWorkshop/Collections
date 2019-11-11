@@ -1,6 +1,6 @@
-# Collections
+# Kolekcje .NET
 
-## Wstęp teoretyczny:
+## Agenda:
 
 1. Kolekcje w .NET
 2. Typy kolekcji:
@@ -11,7 +11,22 @@
 
 ### Kolekcje .NET
 
+Dokumentacja MSDN, z którą warto się zapoznać:
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/collections
+
+Którą kolekcję wybrać:
+https://docs.microsoft.com/en-us/dotnet/standard/collections/selecting-a-collection-class
+
 ### Typy kolekcji
+
+**STACK** and **QUEUE**:
+
+Linki:
+- Stack: https://docs.microsoft.com/en-us/dotnet/api/system.collections.stack?view=netframework-4.8
+- Queue: https://docs.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.8 
+
+Graficznie:
+![stack vs queue](https://techdifferences.net/wp-content/uploads/2019/06/Difference-Between-Stack-and-Queue.png)
 
 ### Analiza danych z użyciem Linq
 
