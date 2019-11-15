@@ -66,12 +66,16 @@ namespace CollectionsNet_Linq
 
             var countryBias = new Dictionary<string, float>();
 
+            var countryBiasLinq = new Dictionary<string, float>();
+
             // Dla każdego kraju wyliczmy proporcję meczy wygranych przez gospodarzy do wszystkich rozegranych w danym kraju
             foreach (var country in homeWinningsperCountry.Keys)
             {
                 var homeWinToTotal = (float)homeWinningsperCountry[country] / (float)totalGamesPerCountry[country];
                 countryBias.Add(country, homeWinToTotal);
             }
+
+            homeWinningsperCountry.Keys.ToList().ForEach(k => countryBiasLinq.Add(k, (float)homeWinningsperCountry[k] / (float)totalGamesPerCountry[k]));
 
             // Posortujmy malejąco po wynikach obliczenia proporcji, wskazując które kraje częściej wygrywają w roli gospodarza
             var sortedBias = from biasEntry in countryBias orderby biasEntry.Value descending select biasEntry;
