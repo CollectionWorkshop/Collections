@@ -1,12 +1,13 @@
-﻿using CollectionsNet_Linq.Model;
-using System.Collections.Generic;
-using System.Linq;
+﻿using CollectionsNet_Data;
 
 namespace CollectionsNet_Linq
 {
-    class Program
+    using System.Collections.Generic;
+    using System.Linq;
+
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             //Wczytanie danych z pliku CSV
             var pathToData = "Data/results.csv";
@@ -21,7 +22,7 @@ namespace CollectionsNet_Linq
 
 
         //Wylistujmy wszystkie mecze rozegrane przez polskich piłkarzy
-        static void SimpleQueryingData(IEnumerable<GameData> footballData)
+        private static void SimpleQueryingData(IEnumerable<GameData> footballData)
         {
             // Linq
             var polandScoresLinq = (from games in footballData
@@ -36,7 +37,7 @@ namespace CollectionsNet_Linq
         }
 
         // W którym roku polscy piłkarze wygrali najwięcej meczów
-        static void SimpleDataGrouping(IEnumerable<GameData> footballData)
+        private static void SimpleDataGrouping(IEnumerable<GameData> footballData)
         {
             var groupedWinsByYear = footballData
                 .Where(f => f.HomeTeam.Equals("Poland") && f.HomeScore > f.AwayScore || f.AwayTeam.Equals("Poland") && f.AwayScore > f.HomeScore) // Wybierzmy mecze wygrane przez Polaków jako gospodarze i goście
@@ -49,7 +50,7 @@ namespace CollectionsNet_Linq
         }
 
         // Ktory kraj faworyzuje najbardziej swoich piłkarzy w meczu rozgrywanym w kraju
-        static void QueryGamesAwayVsHomeAnalysis(IEnumerable<GameData> footballData)
+        private static void QueryGamesAwayVsHomeAnalysis(IEnumerable<GameData> footballData)
         {
             // Policzmy ile meczów w danym kraju zostało wygranych przez zespół gospodarzy
             var homeWinningsperCountry = footballData

@@ -48,9 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\GameDataProcessor.cs" />
-    <Compile Include="Model\GameData.cs" />
-    <Compile Include="Model\GameDataMap.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,10 +55,13 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Data\results.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CollectionsNet_Data\CollectionsNet_Data.csproj">
+      <Project>{ede7ab04-cba3-4f38-91a1-dea873f8ab60}</Project>
+      <Name>CollectionsNet_Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

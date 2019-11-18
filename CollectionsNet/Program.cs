@@ -1,21 +1,27 @@
-﻿using CollectionsNet;
-using CollectionsNet_Linq.Model;
+﻿using System.Collections.Generic;
+using System.Linq;
+using CollectionsNet_Data;
 
-namespace CollectionsNet_Intro
+namespace CollectionsNet
 {
-    class Program
+    using System;
+
+    public static class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             //Wczytanie danych z pliku CSV
-            var pathToData = "Data/results.csv";
+            var pathToData = "Project files/results.csv";
             var dataProcessor = new GameDataProcessor();
-            var gameData = dataProcessor.ProcessData(pathToData);
+            var data = dataProcessor.ProcessData(pathToData).Select(f => f.HomeTeam).ToArray();
 
 
-            QueueAndStackExamples.StackAndQueueIntroduction();
+            //przerobicze string na klase gameData i odac ovveride GetHashet.
+            HashSetIntro.AddCompare(new List<string>(), new HashSet<string>(), data);
 
-            QueueAndStackExamples.StackQueuePerformance(gameData);
+            //var list = new List<string>().AddRange(data);
+            //HashSetIntro.ContainsCompare();
+            Console.ReadKey();
         }
     }
 }
