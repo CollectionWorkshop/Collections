@@ -26,13 +26,13 @@ namespace CollectionsNet_Linq
         {
             // Linq
             var polandScoresLinq = (from games in footballData
-                               where games.HomeTeam.Equals("Poland") || games.AwayTeam.Equals("Poland")
-                               select games).ToList();
+                                    where games.HomeTeam.Equals("Poland") || games.AwayTeam.Equals("Poland")
+                                    select games).ToList();
 
             // Lambda
             var polandScoresLambda = footballData
                 .Where(f => f.HomeTeam.Equals("Poland") || f.AwayTeam.Equals("Poland"))
-                .Select(f => f)
+               // .Select(f => f)
                 .ToList();
         }
 
@@ -66,8 +66,7 @@ namespace CollectionsNet_Linq
                 .ToDictionary(k => k.Key, v => v.Item2); // wpiszmy dane do słownika kraj-ilość meczów
 
             var countryBias = new Dictionary<string, float>();
-
-
+            
             // Dla każdego kraju wyliczmy proporcję meczy wygranych przez gospodarzy do wszystkich rozegranych w danym kraju
             foreach (var country in homeWinningsperCountry.Keys)
             {
