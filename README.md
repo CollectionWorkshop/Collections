@@ -25,6 +25,12 @@ Linki:
 - Stack: https://docs.microsoft.com/en-us/dotnet/api/system.collections.stack?view=netframework-4.8
 - Queue: https://docs.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.8 
 
+*Stack and Queue implementations in dotnet core*
+
+- Stack: https://github.com/dotnet/corefx/blob/master/src/System.Collections/src/System/Collections/Generic/Stack.cs
+
+- Queue: https://github.com/dotnet/corefx/blob/master/src/System.Collections/src/System/Collections/Generic/Queue.cs
+
 Graficznie:
 ![stack vs queue](https://techdifferences.net/wp-content/uploads/2019/06/Difference-Between-Stack-and-Queue.png)
 
