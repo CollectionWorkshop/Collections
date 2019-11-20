@@ -48,11 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Basics\Collections101.cs" />
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Exercises\InitializationExercises.cs" />
+    <Compile Include="Basics\Linq101.cs" />
+    <Compile Include="Exercises\LinqExercises.cs" />
     <Compile Include="PerformanceCompare.cs" />
+    <Compile Include="Exercises\PerformanceExercises.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueueAndStackExamples.cs" />
+    <Compile Include="Examples\PerformanceExamples.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -62,12 +67,6 @@
     <ProjectReference Include="..\CollectionsNet_Data\CollectionsNet_Data.csproj">
       <Project>{ede7ab04-cba3-4f38-91a1-dea873f8ab60}</Project>
       <Name>CollectionsNet_Data</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CollectionsNet_Linq\CollectionsNet_Linq.csproj">
-      <Project>{81647732-D4BA-4860-A2F9-B7BB9D09A718}</Project>
-      <Name>CollectionsNet_Linq</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

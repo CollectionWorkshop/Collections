@@ -37,7 +37,7 @@ namespace CollectionsNet
             var watch = Stopwatch.StartNew();
             for (var i = 0; i < toCheck.Length; i++)
             {
-                var x = list.Contains(toCheck[i]);
+                //var x = list.Contains(toCheck[i]);
             }
 
             Console.WriteLine(watch.ElapsedTicks);
@@ -45,7 +45,7 @@ namespace CollectionsNet
 
             for (var i = 0; i < toCheck.Length; i++)
             {
-                var x =hashSet.Contains(toCheck[i]);
+                //var x =hashSet.Contains(toCheck[i]);
             }
             Console.WriteLine(watch.ElapsedTicks);
         }
