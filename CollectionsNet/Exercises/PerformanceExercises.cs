@@ -8,7 +8,7 @@ namespace CollectionsNet
     {
         private string[] elements;
         private IList<string> listElements = new List<string>();
-        private IList<string> arrayElements = Array.Empty<string>();
+        private IList<string> arrayElements = new string[0];
         private IDictionary<string, string> dictionaryElements = new Dictionary<string, string>();
         private ISet<string> setElements = new HashSet<string>();
 

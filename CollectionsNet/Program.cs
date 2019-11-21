@@ -9,7 +9,7 @@ namespace CollectionsNet
         public static void Main(string[] args)
         {
             //Wczytanie danych z pliku CSV
-            var pathToData = "Project files/results.csv";
+            var pathToData = "results.csv";
             var dataProcessor = new GameDataProcessor();
             var fullGameData = dataProcessor.ProcessData(pathToData);
             var homeTeamData = fullGameData.Select(f => f.HomeTeam).ToArray();

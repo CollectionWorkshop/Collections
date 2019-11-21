@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>CollectionsNet</RootNamespace>
     <AssemblyName>CollectionsNet</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,10 +37,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CsvHelper, Version=12.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
-      <HintPath>..\packages\CsvHelper.12.2.1\lib\net47\CsvHelper.dll</HintPath>
+      <HintPath>..\packages\CsvHelper.12.2.1\lib\net45\CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basics\Collections101.cs" />
+    <Compile Include="Data\GameData.cs" />
+    <Compile Include="Data\GameDataMap.cs" />
+    <Compile Include="Data\GameDataProcessor.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Exercises\InitializationExercises.cs" />
     <Compile Include="Basics\Linq101.cs" />
@@ -62,12 +69,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CollectionsNet_Data\CollectionsNet_Data.csproj">
-      <Project>{ede7ab04-cba3-4f38-91a1-dea873f8ab60}</Project>
-      <Name>CollectionsNet_Data</Name>
-    </ProjectReference>
+    <None Include="results.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
