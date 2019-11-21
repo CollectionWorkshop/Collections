@@ -47,48 +47,48 @@ namespace CollectionsNet
         // W którym roku polscy piłkarze wygrali najwięcej meczów
         private static void SimpleDataGrouping(IEnumerable<GameData> footballData)
         {
-            var groupedWinsByYear = footballData
-                .Where(f => f.HomeTeam.Equals("Poland") && f.HomeScore > f.AwayScore || f.AwayTeam.Equals("Poland") && f.AwayScore > f.HomeScore) // Wybierzmy mecze wygrane przez Polaków jako gospodarze i goście
-                .GroupBy(f => f.Date.Year) // Pogrupujmy mecze po dacie (uwzględniając tylko rok)
-                .Select(f => (f.Key, f.Count())) // Wybierzmy dane w parze rok - ilosc wygranych
-                .ToDictionary(k => k.Key, v => v.Item2) // wpiszmy dane tymczasowo do słownika żeby je jeszcze posortować
-                .OrderByDescending(f => f.Value) // posortujmy malejąco po ilości wygranch                
-                .Take(3) // Wybierzmy top 3 najlepszych lat;                
-                .ToList(); // wpiszmy do listy
+            //var groupedWinsByYear = footballData
+            //    .Where(f => f.HomeTeam.Equals("Poland") && f.HomeScore > f.AwayScore || f.AwayTeam.Equals("Poland") && f.AwayScore > f.HomeScore) // Wybierzmy mecze wygrane przez Polaków jako gospodarze i goście
+            //    .GroupBy(f => f.Date.Year) // Pogrupujmy mecze po dacie (uwzględniając tylko rok)
+            //    .Select(f => (f.Key, f.Count())) // Wybierzmy dane w parze rok - ilosc wygranych
+            //    .ToDictionary(k => k.Key, v => v.Item2) // wpiszmy dane tymczasowo do słownika żeby je jeszcze posortować
+            //    .OrderByDescending(f => f.Value) // posortujmy malejąco po ilości wygranch                
+            //    .Take(3) // Wybierzmy top 3 najlepszych lat;                
+            //    .ToList(); // wpiszmy do listy
         }
 
         // Ktory kraj faworyzuje najbardziej swoich piłkarzy w meczu rozgrywanym w kraju
         private static void QueryGamesAwayVsHomeAnalysis(IEnumerable<GameData> footballData)
         {
             // Policzmy ile meczów w danym kraju zostało wygranych przez zespół gospodarzy
-            var homeWinningsperCountry = footballData
-                .Where(f => f.AwayScore < f.HomeScore) // tam gdzie gospodarze wygrali 
-                .GroupBy(f => f.Country) // pogrupujmy zbiór wg kraju
-                .Select(f => (f.Key, f.Count())) // wybierzmy liczebność każdej z grup
-                .ToDictionary(k => k.Key, v => v.Item2); // wpiszmy dane do słownika kraj-ilość wygranych
+            //var homeWinningsperCountry = footballData
+            //    .Where(f => f.AwayScore < f.HomeScore) // tam gdzie gospodarze wygrali 
+            //    .GroupBy(f => f.Country) // pogrupujmy zbiór wg kraju
+            //    .Select(f => (f.Key, f.Count())) // wybierzmy liczebność każdej z grup
+            //    .ToDictionary(k => k.Key, v => v.Item2); // wpiszmy dane do słownika kraj-ilość wygranych
 
             // Do wyliczenia proporcji, wyznaczmy ile meczów zostało rozgrywanych w danym kraju
-            var totalGamesPerCountry = footballData
-                .GroupBy(f => f.Country) // pogrupujmy cały zbiór wg kraju
-                .Select(f => (f.Key, f.Count())) // zbierzmy liczebność każdej z grup
-                .ToDictionary(k => k.Key, v => v.Item2); // wpiszmy dane do słownika kraj-ilość meczów
+            //var totalGamesPerCountry = footballData
+            //    .GroupBy(f => f.Country) // pogrupujmy cały zbiór wg kraju
+            //    .Select(f => (f.Key, f.Count())) // zbierzmy liczebność każdej z grup
+            //    .ToDictionary(k => k.Key, v => v.Item2); // wpiszmy dane do słownika kraj-ilość meczów
 
-            var countryBias = new Dictionary<string, float>();
+            //var countryBias = new Dictionary<string, float>();
 
-            // Dla każdego kraju wyliczmy proporcję meczy wygranych przez gospodarzy do wszystkich rozegranych w danym kraju
-            foreach (var country in homeWinningsperCountry.Keys)
-            {
-                var homeWinToTotal = (float)homeWinningsperCountry[country] / (float)totalGamesPerCountry[country];
-                countryBias.Add(country, homeWinToTotal);
-            }
+            //// Dla każdego kraju wyliczmy proporcję meczy wygranych przez gospodarzy do wszystkich rozegranych w danym kraju
+            //foreach (var country in homeWinningsperCountry.Keys)
+            //{
+            //    var homeWinToTotal = (float)homeWinningsperCountry[country] / (float)totalGamesPerCountry[country];
+            //    countryBias.Add(country, homeWinToTotal);
+            //}
 
-            var countryBiasLinq = new Dictionary<string, float>();
+            //var countryBiasLinq = new Dictionary<string, float>();
 
-            // Alternatywnie powyższą pętlę można wykonać jedną liniką (wynik taki sam): 
-            homeWinningsperCountry.Keys.ToList().ForEach(k => countryBiasLinq.Add(k, (float)homeWinningsperCountry[k] / (float)totalGamesPerCountry[k]));
+            //// Alternatywnie powyższą pętlę można wykonać jedną liniką (wynik taki sam): 
+            //homeWinningsperCountry.Keys.ToList().ForEach(k => countryBiasLinq.Add(k, (float)homeWinningsperCountry[k] / (float)totalGamesPerCountry[k]));
 
-            // Posortujmy malejąco po wynikach obliczenia proporcji, wskazując które kraje częściej wygrywają w roli gospodarza
-            var sortedBias = from biasEntry in countryBias orderby biasEntry.Value descending select biasEntry;
+            //// Posortujmy malejąco po wynikach obliczenia proporcji, wskazując które kraje częściej wygrywają w roli gospodarza
+            //var sortedBias = from biasEntry in countryBias orderby biasEntry.Value descending select biasEntry;
         }
     }
 }
