@@ -61,7 +61,8 @@ namespace CollectionsNet
             dictionary2.Remove("Holandia");
             var dictionaryElements = dictionary2.Count;
             var isHolland = dictionary2.ContainsKey("Holandia");
-            if (dictionary2.TryGetValue("Holandia", out int value))
+            int value;
+            if (dictionary2.TryGetValue("Holandia", out value))
             {
                 // wykonaj operację jeśli jest element
             };
